@@ -1,0 +1,10 @@
+{
+  "home": {
+    "header": "Homepage",
+    "paragraph": "This is a homepage."
+  },
+  "about": {
+    "header": "About us",
+    "paragraph": "This is an about page."
+  }
+}
