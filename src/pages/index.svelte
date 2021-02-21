@@ -1,5 +1,5 @@
 <script>
-    import { _, isLoading } from 'svelte-i18n';
+    import { _, isLoading, locale, locales } from 'svelte-i18n'
 </script>
 
 {#if $isLoading}
@@ -7,6 +7,12 @@
     <p>Loading</p>
 
 {:else}
+
+    <select bind:value={$locale}>
+        {#each $locales as locale}
+            <option class="text-xs" value={locale}>{locale}</option>
+        {/each}
+    </select>
 
     <h1 class="text-xl">{$_('home.heading')}</h1>
     <p>{$_('home.paragraph')}</p>
