@@ -1,5 +1,9 @@
 <script>
     import { _, isLoading, locale, locales } from 'svelte-i18n'
+    
+    const handleChange = () => {
+        $goto($page.path);
+    };
 </script>
 
 {#if $isLoading}
@@ -8,7 +12,7 @@
 
 {:else}
 
-    <select bind:value={$locale}>
+    <select bind:value={$locale} on:change={handleChange}>
         {#each $locales as locale}
             <option class="text-xs" value={locale}>{locale}</option>
         {/each}
